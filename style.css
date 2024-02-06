@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Questrial', sans-serif;
+}
+
+
+
+
+
+
+#header {
+    height: 100px;
+    border: black;
+    background: linear-gradient(to right, rgb(205, 227, 238), rgb(211, 231, 240),rgb(246, 248, 248) );
+}
+#logo-photo {
+    height: 60px;
+    width: 90px;
+    object-fit: cover;
+}
+#header-container {
+    margin: auto 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  
+}
+#nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 18%;
+    font-size: 16px;
+}
+#nav-bar a:nth-child(1) {
+    text-decoration:none;
+}
+#menu-button {
+    border-style: none;
+    background-color: transparent;
+    font-size: 18px;
+    font-weight: 500;
+}
+#menu-button:hover {
+    color: rgb(35, 170, 170);
+  
+}
+#popupWindow {
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    
+}
+#nav-menu{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    position: relative;
+   
+
+}
+
+
+#nav-menu a {
+    font-size: 40px;
+    text-decoration: none;
+    display: block;
+    font-weight: 600;
+    padding: 5px;
+    
+}
+
+#nav-menu-2 a {
+    color: white;
+
+}
+
+
+
+#nav-menu-2 {
+    background-color: rgb(17, 37, 219);
+    width: 65%;
+    height: 100%;
+    padding-right: 100px;
+    position: absolute;
+    right: 0;
+    z-index: 999;
+    clip-path: polygon(100% 0, 100% 100%, 50% 100%, 0% 0%);
+ 
+ 
+}
+#nav-menu-2 .text{
+    z-index: 10;
+    position: absolute;
+    right: 200px;
+    margin-top: 160px;
+
+}
+#nav-menu-1 {
+    padding-left: 100px;
+    background-color: rgba(250 , 255, 255, 0.9);
+    width:100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    clip-path: polygon(0% -30%, 100% 50%, 100% 100%,  0 100%);
+    z-index: 999;
+
+}
+#nav-menu-1 .text{
+    z-index: 10;
+    position: absolute;
+    left: 100px;
+    margin-top: 160px;
+}
+#nav-menu-1 a {
+    color: rgb(45, 62, 219);
+
+
+}
+#slider-container {
+    width: 100vw;
+    background: linear-gradient(to right, rgb(31, 53, 177), rgb(28, 154, 212),rgb(246, 248, 248) );
+    height: 100vh;
+    overflow:hidden;
+    display: flex;
+    justify-content: space-between;
+}
+
+#sliderCard {
+    width: 250px;
+    height: 400px;
+    background-color: rgb(219, 234, 240);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+
+}
+
+#sliderCard img {
+    width: 160px;
+    margin-top: 6px;
+}
+#sliderCard div {
+    text-align: center;
+}
+#sliderCard #discount {
+    background-color: rgb(50, 224, 224);
+    color: white;
+    position: absolute;
+    width: 80px;
+    height: 20px;
+    transform:rotate(60deg);
+    top: 30px;
+    left: 180px;
+}
+#search-container {
+    top: 60%;
+    right: 0;
+    z-index: 2;
+    position: absolute;
+
+}
+#search-button {
+    background-color: rgb(62, 62, 235);
+    width: 50px;
+    height: 50px;
+    color: white;
+    border-style: none;
+    font-size: 20px;
+    transform: rotate(360deg);
+}
+#search-input {
+    height: 50px;
+    border-radius: 24px;
+    border-style: none;
+    background-color: rgb(50, 224, 224);
+    width: 300px;
+    display: none;
+
+   
+
+}
+#search-input.active {
+    display: block;
+}
+#search-button.active {
+    display: none;
+
+}
+#seach-input:focus {
+    outline: 0;
+}
