@@ -2,24 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 
 
-
-
 * {
     box-sizing: border-box;
 }
-
-
 
 body {
     margin: 0;
     padding: 0;
     font-family: 'Questrial', sans-serif;
 }
-
-
-
-
-
 
 #header {
     height: 100px;
@@ -46,18 +37,60 @@ body {
     width: 18%;
     font-size: 16px;
 }
-#nav-bar a:nth-child(1) {
-    text-decoration:none;
+
+.nav {
+    color: rgb(17, 37, 219);
+    font-size: 18px;
+    position: relative;
 }
-#menu-button {
+.nav::after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: rgb(17, 37, 219);  
+    left: 0;
+    bottom: -4px;
+    position: absolute;
+    opacity: 0;
+    transition: all 0.3s;
+}
+.link-basket  {
+    color: rgb(17, 37, 219);
+    font-size: 18px;
+    transition: all 0.3s;
+}
+.link-login a {
+    color: black;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+.link-login .fa-sign-in-alt {
+    transition: all 0.3s;
+}
+.nav:hover::after{
+    opacity: 1;
+}
+.nav:hover {
+    color: rgb(50, 224, 224);
+}
+
+.link-basket:hover{
+    color:rgb(50, 224, 224);
+}
+.link-login a:hover{
+    color:rgb(50, 224, 224);
+
+}
+
+
+.link-button {
     border-style: none;
     background-color: transparent;
     font-size: 18px;
     font-weight: 500;
-}
-#menu-button:hover {
-    color: rgb(35, 170, 170);
-  
+    color: black;
+    cursor: pointer;
+    transition: all 0.3s;
 }
 #popupWindow {
     height: 100vh;
@@ -81,7 +114,7 @@ body {
 }
 
 
-#nav-menu a {
+#nav-menu {
     font-size: 40px;
     text-decoration: none;
     display: block;
@@ -138,37 +171,79 @@ body {
 
 
 }
-#slider-container {
-    width: 100vw;
-    background: linear-gradient(to right, rgb(31, 53, 177), rgb(28, 154, 212),rgb(246, 248, 248) );
-    height: 100vh;
-    overflow:hidden;
+#icons {
     display: flex;
     justify-content: space-between;
+    width: 300px;
+    z-index: 1000;
+    position: absolute;
+    top: 80%;
+    left: 10%;
+
+    
+}
+#icons img {
+    width: 65px;
+    height: 65px;
+    transform: rotateX(45deg) rotateZ(-50deg);
+    object-fit: cover;
+    border-radius: 12px;
+    transition: 1s;
 }
 
-#sliderCard {
+
+#icons img:hover {
+    transform: translateY(-40px);
+    
+        
+}
+#close-Menu {
+    z-index: 1000;
+    position: absolute;
+    left: 90%;
+    top: 5%;
+    color: white;
+    font-size: 25px;
+    
+
+}
+
+
+.slider-container {
+    width: 100vw;
+    background: linear-gradient(to right, rgb(31, 53, 177), rgb(28, 154, 212),rgb(246, 248, 248));
+    height: 100vh;
+    overflow:hidden;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    
+   
+   
+}
+
+.slider-container .slide-card {
     width: 250px;
     height: 400px;
     background-color: rgb(219, 234, 240);
     border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin-top: 60px;
     position: relative;
-
-
-}
-
-#sliderCard img {
-    width: 160px;
-    margin-top: 6px;
-}
-#sliderCard div {
+    padding: 35px;
     text-align: center;
+
 }
-#sliderCard #discount {
+
+
+.slider-container .slide-card img {
+    width: 180px;
+    height: 230px;
+    border-radius: 8px;
+
+  
+}
+
+.slider-container #discount {
     background-color: rgb(50, 224, 224);
     color: white;
     position: absolute;
@@ -182,30 +257,38 @@ body {
     top: 60%;
     right: 0;
     z-index: 2;
-    position: absolute;
+    position: fixed;
 
 }
 #search-button {
+    transition: 1.2s;
     background-color: rgb(62, 62, 235);
     width: 50px;
     height: 50px;
     color: white;
     border-style: none;
     font-size: 20px;
-    transform: rotate(360deg);
+    transform: rotateZ(360deg);
 }
 #search-input {
+    position: absolute;
+    padding-left: 20px;
+    outline: none;
     height: 50px;
+    width: 50px;
+
+    /* width: 300px; */
     border-radius: 24px;
     border-style: none;
     background-color: rgb(50, 224, 224);
-    width: 300px;
     display: none;
-
-   
-
 }
+.search-inupt-rotating{
+    transform: rotate(45deg);
+}
+
 #search-input.active {
+    transition: 0.6s;
     display: block;
 }
 #search-button.active {
@@ -214,4 +297,60 @@ body {
 }
 #seach-input:focus {
     outline: 0;
+}
+
+#news {
+
+}
+#promo {
+    margin-left: 15%;
+    color:rgb(31, 53, 177);
+
+}
+.new-books {
+   display: flex;
+   gap: 60px;
+   margin-bottom: 40px;
+   margin-left: 15%;
+   animation: leftSlide 0.6s ease-in-out ;
+  
+}
+.new-books #card {
+    height: 250px;
+    width: 180px;
+    transition: 4s;
+    position: relative;
+}
+
+
+@keyframes leftSlide {
+    from{
+        transform: translateX(-300px);
+        opacity: 0.2;
+         filter: (50px);
+
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+        filter: blur(0);
+
+    }
+}
+
+
+.new-books #card img {
+    position: absolute;
+}
+#cardBack {
+    display: none;
+    transform: translateZ(200px);
+    background-color: tomato;
+    position: absolute;
+    width: 250px;
+    height: 100%;
+    transform: rotateY(180deg);
+    top: 10%;
+ 
+
 }
