@@ -1,12 +1,25 @@
 menuBtn=document.querySelector('.link-button');
-closeBtn=document.querySelector('#close-Menu')
+closeBtn=document.querySelector('#close-Menu');
+navMenu1=document.querySelector('#nav-menu-1');
+navMenu2=document.querySelector('#nav-menu-2');
+text1=document.querySelector('.text-1');
+text2=document.querySelector('.text-2');
+icons=document.querySelector('#icons');
+contactInfo=document.querySelector('#contact-info');
+
+
 
 menuBtn.addEventListener("click", showMenu);
 
 function showMenu(event) {
     event.preventDefault();
     popupWindow.style.display = "block";
-
+    navMenu1.classList.toggle('active');
+    navMenu2.classList.toggle('active');
+    text1.classList.toggle('active');
+    text2.classList.toggle('active');
+    icons.classList.toggle('active');
+    contactInfo.classList.toggle('active');
 
 }
 closeBtn.addEventListener("click", closeMenu);
@@ -14,8 +27,6 @@ closeBtn.addEventListener("click", closeMenu);
 function closeMenu(event) {
     event.preventDefault();
     popupWindow.style.display = "none";
-
-
 }
 
 
