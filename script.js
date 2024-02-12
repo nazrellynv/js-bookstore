@@ -2,11 +2,10 @@ menuBtn=document.querySelector('.link-button');
 closeBtn=document.querySelector('#close-Menu');
 navMenu1=document.querySelector('#nav-menu-1');
 navMenu2=document.querySelector('#nav-menu-2');
-text1=document.querySelector('.text-1');
+text1=document.querySelector('.text-1')
 text2=document.querySelector('.text-2');
 icons=document.querySelector('#icons');
 contactInfo=document.querySelector('#contact-info');
-
 
 
 menuBtn.addEventListener("click", showMenu);
@@ -28,7 +27,6 @@ function closeMenu(event) {
     event.preventDefault();
     popupWindow.style.display = "none";
 }
-
 
 
 
@@ -71,3 +69,11 @@ cardBack.style.display="none"
 
 
 }
+
+new fullpage("#full-page", {
+    autoScrolling: true,
+    navigation: true,
+    
+
+
+}) 
