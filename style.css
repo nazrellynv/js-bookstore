@@ -94,7 +94,7 @@ body {
 #popupWindow {
     height: 100vh;
     width: 100vw;
-    z-index: 1;
+    z-index: 2;
     position: absolute;
     top: 0;
     left: 0;
@@ -298,83 +298,7 @@ body {
     
 
 }
-.swiper {
-    width: 100%;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    background: linear-gradient(to right, rgb(31, 53, 177), rgb(28, 154, 212),rgb(246, 248, 248));
-  }
 
-  .swiper-slide {
-    background-color: rgb(219, 234, 240);
-    width: 250px;
-    height: 400px;
-    text-align: center;
-    border-radius: 8px;
-  }
-  .slider-container .slide-card {
-  width: 250px;
-  height: 400px;
-  background-color: rgb(219, 234, 240);
-  border-radius: 8px;
-  margin-top: 60px;
-  position: relative;
-  padding: 35px;
-  text-align: center;
-}
-
-  .swiper-slide img {
-    display: block;
-    width: 180px;
-    width: 180px;
-    height: 230px;
-    border-radius: 8px;
-    margin-left: 35px;
-    margin-top: 10px;
-  }
-  
-.slider-container .slide-card img {
-  width: 180px;
-  height: 230px;
-  border-radius: 8px;
-
-
-}
-/*
-.slider-container {
-    width: 100vw;
-    background: linear-gradient(to right, rgb(31, 53, 177), rgb(28, 154, 212),rgb(246, 248, 248));
-    height: 100vh;
-    overflow:hidden;
-    margin: 0;
-    display: flex;
-    justify-content: space-between;
-    
-   
-   
-}
-
-.slider-container .slide-card {
-    width: 250px;
-    height: 400px;
-    background-color: rgb(219, 234, 240);
-    border-radius: 8px;
-    margin-top: 60px;
-    position: relative;
-    padding: 35px;
-    text-align: center;
-
-}
-
-
-.slider-container .slide-card img {
-    width: 180px;
-    height: 230px;
-    border-radius: 8px;
-
-  
-}
-*/
 
 .slider-container #discount {
     background-color: rgb(50, 224, 224);
@@ -433,9 +357,7 @@ body {
     outline: 0;
 }
 
-#news {
 
-}
 #promo {
     margin-left: 15%;
     color:rgb(31, 53, 177);

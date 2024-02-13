@@ -34,18 +34,14 @@ searchInput=document.querySelector('#search-input')
 searchBtn=document.querySelector('#search-button');
 
 searchBtn.addEventListener("click", ()=>{
-  searchBtn.style.transform = "rotate(720deg)"
-  searchBtn.style.opacity = "0"
-  searchInput.style.display = "block"
+  searchBtn.style.transform = "rotate(720deg)";
+  searchBtn.style.opacity = "0";
+  searchInput.style.display = "block";
+  searchInput.style.width = "300px";
+  searchInput.style.right = "0";
+
 })
 
-// searchBtn.addEventListener("click", showInput);
-
-function showInput() {
-    searchInput.classList.toggle('active');
-    searchBtn.classList.toggle('active');
-    searchInput.focus()
-}
 
 
 
@@ -70,10 +66,3 @@ cardBack.style.display="none"
 
 }
 
-new fullpage("#full-page", {
-    autoScrolling: true,
-    navigation: true,
-    
-
-
-}) 
