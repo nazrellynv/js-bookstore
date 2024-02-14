@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 
 
-
 * {
     box-sizing: border-box;
 }
@@ -236,8 +235,7 @@ body {
     right: 0;
     z-index: 999;
     clip-path: polygon(100% 0, 100% 100%, 50% 100%, 0% 0%);
- 
- 
+
 }
 #nav-menu-2 .text-2{
     margin-top: 160px;
@@ -260,8 +258,6 @@ body {
 }
 #nav-menu-1 a {
     color: rgb(45, 62, 219);
-
-
 }
 #icons {
     display: flex;
@@ -286,8 +282,7 @@ body {
 
 #icons img:hover {
     transform: translateY(-40px);
-    
-        
+  
 }
 #close-Menu {
     z-index: 1000;
@@ -317,7 +312,6 @@ body {
     height: 50px;
     position: absolute;
     background-color: rgb(17, 37, 219);
-
 }
  #search-container #search-button {
     transition: 1.2s;
@@ -343,7 +337,6 @@ body {
 #search-container.active {
   width: 300px;
   background-color: transparent;
-
 }
 
 #search-container .fa-arrow-right {
@@ -360,7 +353,6 @@ body {
 }
 
 #search-container #search-input {
-
     position: absolute;
     padding-left: 20px;
     outline: none;
@@ -379,19 +371,80 @@ body {
 }
 
 
-
 #promo {
     margin-left: 15%;
     color:rgb(31, 53, 177);
 }
+
 .new-books {
    display: flex;
    gap: 60px;
    margin-bottom: 40px;
    margin-left: 15%;
-  
-  
+
 }
+.new-books.inverse {
+ 
+ animation-name: animatedPic;
+ animation-duration: 1s;
+
+
+}
+@keyframes animatedPic {
+    0%{
+        opacity: 0;
+        transform: translateX(-500px);
+
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+}
+.sale-books {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin: 5% 15% 5%;
+}
+.sale-books .leftBook.inverse {
+    animation-name: animatedPic;
+ animation-duration: 1s;
+
+
+}
+@keyframes animatedPic {
+    0%{
+        opacity: 0;
+        transform: translateX(-500px);
+
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    } 
+
+}
+.sale-books .rightBook.inverse {
+    animation-name: animatedPicRight;
+    animation-duration: 1s;
+
+}
+@keyframes animatedPicRight {
+    0%{
+        opacity: 0;
+        transform: translateX(500px);
+
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    } 
+
+}
+
+
 .new-books #card {
     height: 250px;
     width: 180px;
@@ -399,21 +452,6 @@ body {
     position: relative;
 }
 
-
-@keyframes leftSlide {
-    from{
-        transform: translateX(-300px);
-        opacity: 0.2;
-         filter: (50px);
-
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-        filter: blur(0);
-
-    }
-}
 
 
 .new-books #card img {
@@ -429,9 +467,7 @@ body {
     transform: rotateY(180deg);
     top: 10%;
 
-
 }
-
 
 #footer {
   bottom: 0;
@@ -510,8 +546,6 @@ body {
     width: 90px;
     display: block;
     margin:  auto;
-
-
 
 
 }

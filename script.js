@@ -76,6 +76,69 @@ function showFront() {
 card.style.transform= "rotateY(0)";
 cardBack.style.display="none"
 
-
 }
+
+
+const newBooks = document.querySelectorAll(".new-books");
+const options = {
+  root: null,
+  threshold: 0,
+  rootMargin: "-20px",
+};
+
+const observer = new IntersectionObserver(function(entries, observer) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('inverse');
+    } else {
+      entry.target.classList.remove('inverse');
+    }
+  });
+}, options);
+ newBooks.forEach(newBooks => {
+  observer.observe(newBooks);
+
+ });
+
+const saleLeftBook = document.querySelector(".leftBook");
+const options2 = {
+  root: null,
+  threshold: 0,
+  rootMargin: "-20px",
+};
+
+const observer2= new IntersectionObserver(function(entries,observer){
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('inverse');
+    } else {
+      entry.target.classList.remove('inverse');
+    }
+  });
+
+},options);
+
+
+  observer2.observe(saleLeftBook);
+  const saleRightBook = document.querySelector(".rightBook");
+  const options3 = {
+    root: null,
+    threshold: 0,
+    rootMargin: "-20px",
+  };
+
+
+  const observer3= new IntersectionObserver(function(entries,observer){
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('inverse');
+      } else {
+        entry.target.classList.remove('inverse');
+      }
+    });
+  
+  },options);
+  
+  
+    observer.observe(saleRightBook);
 
