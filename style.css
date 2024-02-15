@@ -13,8 +13,12 @@ body {
 }
 
 #header {
-    height: 100px;
+    height: 80px;
     border: black;
+    position: fixed;
+    z-index: 1000;
+    inset: 0 0 auto;
+
     background: linear-gradient(to right, rgb(205, 227, 238), rgb(211, 231, 240),rgb(246, 248, 248) );
 }
 .logo-photo {
@@ -99,6 +103,7 @@ body {
     top: 0;
     left: 0;
     display: none;
+    
     
 }
 #nav-menu{
@@ -381,12 +386,14 @@ body {
    gap: 60px;
    margin-bottom: 40px;
    margin-left: 15%;
+   margin-top: 5%;
 
 }
 .new-books.inverse {
  
  animation-name: animatedPic;
- animation-duration: 1s;
+ animation-duration: 0.8s;
+ animation-timing-function: ease-in-out;
 
 
 }
@@ -406,14 +413,15 @@ body {
     display: flex;
     flex-direction: row;
     gap: 15px;
-    margin: 5% 15% 5%;
+    margin: 5% 10% 5%;
 }
 .sale-books .leftBook.inverse {
     animation-name: animatedPic;
- animation-duration: 1s;
+    animation-duration: 1s;
 
 
 }
+
 @keyframes animatedPic {
     0%{
         opacity: 0;
@@ -443,31 +451,64 @@ body {
     } 
 
 }
-
-
-.new-books #card {
-    height: 250px;
-    width: 180px;
-    transition: 4s;
-    position: relative;
-}
-
-
-
-.new-books #card img {
+.img {
+    width: 190px;
+    height: 280px;
     position: absolute;
+ 
+
 }
-#cardBack {
+.bg {
+    background-color:  #1d1d1d;
     display: none;
-    transform: translateZ(200px);
-    background-color: tomato;
+    transform: translateZ(-1px)
+
+}
+.bg.animate {
+    display: block;
+}
+
+.cardBack.animate {
+    display: block;
+}
+.new-books .card {
+    height: 230px;
+    width: 180px;
+    transition: 1s;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+}
+.new-books .card.animate {
+    transform: rotateY(180deg);
+}
+
+.cardBack {
+    display: none;
+    transform: translateZ(-120px) rotateY(180deg);
+    background-image: linear-gradient(90deg, tomato , rgb(245, 203, 67));
     position: absolute;
     width: 250px;
     height: 100%;
-    transform: rotateY(180deg);
-    top: 10%;
+    color: white;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 10px;
+    line-height: 20px;
+}
+.card .cardBack span{
+    color: rgb(17, 37, 219);
+    font-weight: 500;
+    right: 0;
+    right: 0;
 
 }
+.cardBack.animate {
+    display: block;
+}
+
 
 #footer {
   bottom: 0;

@@ -59,24 +59,27 @@ searchBtn.addEventListener("click", ()=>{
 
 
 
-const card=document.querySelector("#card");
-const cardBack=document.querySelector("#cardBack")
+const card=document.querySelector(".card");
+const cardBack=document.querySelector(".cardBack");
+const imgBcg=document.querySelector(".bg")
 
 card.addEventListener("mouseenter",  showBack);
 function showBack() {
-card.style.transform= "rotateY(180deg)";
-card.style.
-cardBack.style.display="block"
-
+card.classList.add('animate');
+cardBack.classList.add('animate');
+imgBcg.classList.add('animate');
 
 
 }
+
 card.addEventListener("mouseleave", showFront);
 function showFront() {
-card.style.transform= "rotateY(0)";
-cardBack.style.display="none"
+  card.classList.remove('animate');
+  cardBack.classList.remove('animate');
+  imgBcg.classList.remove('animate');
 
 }
+
 
 
 const newBooks = document.querySelectorAll(".new-books");
@@ -99,6 +102,7 @@ const observer = new IntersectionObserver(function(entries, observer) {
   observer.observe(newBooks);
 
  });
+ 
 
 const saleLeftBook = document.querySelector(".leftBook");
 const options2 = {
@@ -142,3 +146,4 @@ const observer2= new IntersectionObserver(function(entries,observer){
   
     observer.observe(saleRightBook);
 
+   
