@@ -42,9 +42,38 @@ function closeMenu() {
 }
 
 
-const bouncing=document.querySelectorAll('.bouncing');
-const icon=document.querySelectorAll('.icon');
+const bouncedInsta=document.querySelectorAll('.insta-icon');
+const google=document.querySelector('.google');
+const bouncedFcb=document.querySelectorAll('.facebook-icon');
+const instagram=document.querySelector('.instagram');
+const facebook=document.querySelector('.facebook');
+const bouncedGgl=document.querySelectorAll('.google-icon');
 
+instagram.addEventListener('mouseenter', () => {
+  instagram.classList.add('bounced');
+  bouncedInsta.forEach(bouncedInsta => {
+    bouncedInsta.classList.add("animate")
+
+  })
+
+})
+facebook.addEventListener('mouseenter', () => {
+  facebook.classList.add('bounced');
+  bouncedFcb.forEach(bouncedFcb => {
+    bouncedFcb.classList.add("animate")
+
+  })
+ 
+})
+google.addEventListener('mouseenter', () => {
+  google.classList.add('bounced');
+  bouncedGgl.forEach(bouncedGgl => {
+    bouncedGgl.classList.add("animate")
+
+  })
+
+})
+/*
  icon.forEach(icon => {
   icon.addEventListener('mouseenter', () => {
     icon.classList.add('bounced');
@@ -62,7 +91,7 @@ const icon=document.querySelectorAll('.icon');
   
 
  })
-
+*/
  
 
 

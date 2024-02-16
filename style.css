@@ -293,9 +293,16 @@ body {
     transition: 1s;
    
 }
-.bouncing.animate {
+.insta-icon.animate{
     display: block;
 }
+.facebook-icon.animate{
+    display: block;
+}
+.google-icon.animate{
+    display: block;
+}
+
 
 .facebook .effect1 {
     transform: rotateX(54deg) rotateZ(-50deg) translateZ(110px) translateY(47px) translateX(-47px);
@@ -380,13 +387,20 @@ body {
 .icon img {
     width: 65px;
     height: 65px;
-    transform: rotateX(45deg) rotateZ(-50deg);
+    transform: rotateX(45deg) rotateZ(-50deg) translateX(10px);
     object-fit: cover;
     border-radius: 12px;
     transition: 1s;
     z-index: 1;
 }
-.icon.bounced {
+
+.instagram.bounced {
+    animation: bouncingIcon 1s;
+}
+.facebook.bounced {
+    animation: bouncingIcon 1s;
+}
+.google.bounced {
     animation: bouncingIcon 1s;
 }
 @keyframes bouncingIcon {
