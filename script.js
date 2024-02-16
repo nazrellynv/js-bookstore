@@ -1,3 +1,18 @@
+document.addEventListener('scroll', () => {
+  const header=document.querySelector("#header");
+  if (window.scrollY>0) {
+    header.classList.add('scrolled');
+  }
+  else {
+    header.classList.remove('scrolled');
+  }
+
+})
+
+
+
+
+
 
  const menuBtn=document.querySelector('.link-button');
  const closeBtn=document.querySelector('#close-Menu');
@@ -12,7 +27,7 @@
 menuBtn.addEventListener("click", showMenu);
 
 function showMenu() {
-    popupWindow.style.display = "block";
+    popupWindow.classList.add('active');
     navMenu1.classList.toggle('active');
     navMenu2.classList.toggle('active');
     text1.classList.toggle('active');
@@ -22,10 +37,34 @@ function showMenu() {
 
 }
 closeBtn.addEventListener("click", closeMenu);
-
 function closeMenu() {
-    popupWindow.style.display = "none";
+    popupWindow.classList.remove('active');
 }
+
+
+const bouncing=document.querySelectorAll('.bouncing');
+const icon=document.querySelectorAll('.icon');
+
+ icon.forEach(icon => {
+  icon.addEventListener('mouseenter', () => {
+    icon.classList.add('bounced');
+    bouncing.forEach(bouncing => {
+      bouncing.classList.add("animate")
+  })
+     
+  })
+  icon.addEventListener('mouseleave', () => {
+    icon.classList.remove('bounced');
+    bouncing.forEach(bouncing => {
+      bouncing.classList.remove("animate")
+    })
+  })
+  
+
+ })
+
+ 
+
 
 
 
@@ -146,4 +185,17 @@ const observer2= new IntersectionObserver(function(entries,observer){
   
     observer.observe(saleRightBook);
 
-   
+   const category= document.querySelector('.category');
+   const observer4= new IntersectionObserver(function(entries,observer){
+    entries.forEach(entry=>{
+      if (entry.isIntersecting) {
+        entry.target.classList.add('inverse');
+      } else {
+        entry.target.classList.remove('inverse');
+      }
+
+    })
+
+   },options);
+
+   observer4.observe(category);

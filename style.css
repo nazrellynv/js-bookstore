@@ -15,10 +15,17 @@ body {
 #header {
     height: 80px;
     border: black;
-    position: fixed;
-    z-index: 1000;
-    inset: 0 0 auto;
+    position: sticky;
+    top:0;
+    z-index: 1001;
     background: linear-gradient(to right, rgb(205, 227, 238), rgb(211, 231, 240),rgb(246, 248, 248) );
+    transition: background-color linear;
+}
+
+#header.scrolled {
+    background: rgba(255, 255, 255, 0.8);
+    
+
 }
 .logo-photo {
     height: 60px;
@@ -103,6 +110,9 @@ body {
     left: 0;
     display: none;
     
+}
+#popupWindow.active {
+    display: block;
     
 }
 #nav-menu{
@@ -136,7 +146,7 @@ body {
 @keyframes showLeftPage {
    
     from {
-        transform: translateX(0) translateY(-500px);
+        transform: translateX(0px) translateY(-500px);
         opacity:0;
         
     }
@@ -271,23 +281,125 @@ body {
     position: absolute;
     top: 80%;
     left: 10%;
-
     
 }
-#icons img {
+.bouncing  {
+    width: 65px;
+    height: 65px;
+    position: absolute;
+    z-index: -1;
+    border-radius: 8px;
+    display: none;
+    transition: 1s;
+   
+}
+.bouncing.animate {
+    display: block;
+}
+
+.facebook .effect1 {
+    transform: rotateX(54deg) rotateZ(-50deg) translateZ(110px) translateY(47px) translateX(-47px);
+    background-color: rgba(17, 37, 219, 0.8);
+}
+.facebook .effect2 {
+   
+    transform: rotateX(54deg) rotateZ(-50deg) translateZ(100px) translateY(47px) translateX(-47px);
+    background-color: rgba(17, 37, 219, 0.6);
+
+  
+
+}
+.facebook .effect3 {
+    transform: rotateX(54deg) rotateZ(-50deg) translateZ(90px) translateY(47px) translateX(-47px);
+    background-color: rgba(17, 37, 219, 0.5);
+    
+
+}
+.facebook .effect4 {
+    transform: rotateX(54deg) rotateZ(-50deg) translateZ(80px) translateY(47px) translateX(-47px);
+    background-color: rgba(17, 37, 219, 0.4);
+ 
+}
+.instagram .effect1 {
+    transform: rotateX(54deg) rotateZ(-50deg) translateZ(110px) translateY(58px) translateX(-47px);
+    background:  rgba(131, 58, 180, 0.8);
+    
+    
+}
+.instagram .effect2 {
+    transform: rotateX(54deg) rotateZ(-50deg) translateZ(100px) translateY(58px) translateX(-47px);
+    background:  rgba(131, 58, 180, 0.6);
+
+  
+
+}
+.instagram .effect3 {
+    transform: rotateX(54deg) rotateZ(-50deg) translateZ(90px) translateY(58px) translateX(-47px);
+    background:  rgba(131, 58, 180, 0.5);
+    
+
+}
+.instagram .effect4 {
+    transform: rotateX(54deg) rotateZ(-50deg) translateZ(80px) translateY(58px) translateX(-47px);
+    background:  rgba(131, 58, 180, 0.4);
+ 
+}
+.google .effect1 {
+    transform: rotateX(54deg) rotateZ(-50deg) translateZ(110px) translateY(58px) translateX(-47px);
+    background: rgba(204, 80, 58, 0.8)
+    
+    
+}
+.google .effect2 {
+    transform: rotateX(54deg) rotateZ(-50deg) translateZ(100px) translateY(58px) translateX(-47px);
+    background: rgba(204, 80, 58, 0.6)
+
+  
+
+}
+.google .effect3 {
+    transform: rotateX(54deg) rotateZ(-50deg) translateZ(90px) translateY(58px) translateX(-47px);
+    background: rgba(204, 80, 58, 0.4)
+    
+
+}
+.google .effect4 {
+    transform: rotateX(54deg) rotateZ(-50deg) translateZ(80px) translateY(58px) translateX(-47px);
+    background: rgba(204, 80, 58, 0.3)
+ 
+}
+.facebookIcon{
+    width: 80px !important;
+    height: 80px !important;
+}
+.googleIcon{
+    width: 80px !important;
+    height: 80px !important;
+    border-radius: 20px;
+}
+.icon img {
     width: 65px;
     height: 65px;
     transform: rotateX(45deg) rotateZ(-50deg);
     object-fit: cover;
     border-radius: 12px;
     transition: 1s;
+    z-index: 1;
+}
+.icon.bounced {
+    animation: bouncingIcon 1s;
+}
+@keyframes bouncingIcon {
+    from{
+        transform: rotate(45deg) rotateZ(-50deg) translateY(0);
+
+    }
+    to {
+        transform: rotate(45deg) rotateZ(-50deg)  translateY(-50px);
+    }
 }
 
 
-#icons img:hover {
-    transform: translateY(-40px);
-  
-}
 #close-Menu {
     z-index: 1000;
     position: absolute;
@@ -417,7 +529,6 @@ body {
     animation-name: animatedPic;
     animation-duration: 1s;
 
-
 }
 
 @keyframes animatedPic {
@@ -522,6 +633,35 @@ body {
     transform: translateZ(1000px);
     
 }
+.category.inverse{
+   animation: animateCategory 1s;
+    
+}
+@keyframes animateCategory {
+    from{
+        transform: translateX(100px)
+
+    }
+    to{
+        transform: translateX(0) 
+
+    }
+}
+.last-section p {
+    width: 250px;
+}
+.last-section {
+    display: flex;
+    justify-content: space-between;
+    margin: 5% 13% 5%;
+}
+
+.books img {
+    width: 100px;
+}
+.books p {
+    font-weight: 600;
+}
 #footer {
   bottom: 0;
   background-color: rgb(239, 242, 243);
@@ -545,17 +685,13 @@ body {
     background-color: black;
     width: 300px;
     height: 1px;
-
 }
 
 #site-name .right {
     margin-right: 13%;
-
-
 }
 #site-name .left {
     margin-left: 13%;
-   
 }
 #site-info {
     display: flex;
@@ -599,6 +735,4 @@ body {
     width: 90px;
     display: block;
     margin:  auto;
-
-
 }
