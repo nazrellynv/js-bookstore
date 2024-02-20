@@ -2,8 +2,7 @@
 .swiper {
   width: 100%;
   height: 100vh;
-  padding-top: 5%;
-  padding-bottom: 50px;
+  padding: 5% 15% 5%;
   background: linear-gradient(to right, rgb(31, 53, 177), rgb(28, 154, 212),rgb(246, 248, 248));
 }
 

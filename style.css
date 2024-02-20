@@ -91,7 +91,6 @@ body {
     color:rgb(50, 224, 224);
 
 }
-
 .link-button {
     border-style: none;
     background-color: transparent;
@@ -112,8 +111,7 @@ body {
     
 }
 #popupWindow.active {
-    display: block;
-    
+    display: block;  
 }
 #nav-menu{
     width: 100%;
@@ -211,8 +209,6 @@ body {
     color: white;
     transition: all 0.5s;
     padding-left: 8px;
-   
-
 }
 #nav-menu-2 a:hover {
     background-color: white;
@@ -221,7 +217,6 @@ body {
     color: rgb(45, 62, 219);;
     transition: all 0.5s;
     padding-left: 8px;
-
 }
 #icons.active {
     animation:  showElements 1.6s ;
@@ -232,12 +227,10 @@ body {
     font-size: 40px;
     font-weight: 800;
     padding: 5px;
-
 }
 
 #nav-menu-2 a {
     color: white;
-
 }
 
 #nav-menu-2 {
@@ -280,100 +273,69 @@ body {
     z-index: 1000;
     position: absolute;
     top: 80%;
-    left: 10%;
-    
+    left: 10%; 
 }
 .bouncing  {
-    width: 65px;
-    height: 65px;
+    width: 60px;
+    height: 60px;
     position: absolute;
     z-index: -1;
     border-radius: 8px;
     display: none;
     transition: 1s;
-   
 }
-.insta-icon.animate{
+.bouncing.animate {
     display: block;
 }
-.facebook-icon.animate{
-    display: block;
-}
-.google-icon.animate{
-    display: block;
-}
-
 
 .facebook .effect1 {
-    transform: rotateX(54deg) rotateZ(-50deg) translateZ(110px) translateY(47px) translateX(-47px);
+    transform: rotateX(54deg) rotateZ(-50deg) translateZ(135px) translateY(59px) translateX(-38px);
     background-color: rgba(17, 37, 219, 0.8);
 }
 .facebook .effect2 {
-   
-    transform: rotateX(54deg) rotateZ(-50deg) translateZ(100px) translateY(47px) translateX(-47px);
+    transform: rotateX(54deg) rotateZ(-50deg) translateZ(125px) translateY(59px) translateX(-38px);
     background-color: rgba(17, 37, 219, 0.6);
-
-  
-
 }
 .facebook .effect3 {
-    transform: rotateX(54deg) rotateZ(-50deg) translateZ(90px) translateY(47px) translateX(-47px);
+    transform: rotateX(54deg) rotateZ(-50deg) translateZ(115px) translateY(59px) translateX(-38px);
     background-color: rgba(17, 37, 219, 0.5);
-    
-
 }
 .facebook .effect4 {
-    transform: rotateX(54deg) rotateZ(-50deg) translateZ(80px) translateY(47px) translateX(-47px);
+    transform: rotateX(54deg) rotateZ(-50deg) translateZ(105px) translateY(59px) translateX(-38px);
     background-color: rgba(17, 37, 219, 0.4);
  
 }
 .instagram .effect1 {
-    transform: rotateX(54deg) rotateZ(-50deg) translateZ(110px) translateY(58px) translateX(-47px);
-    background:  rgba(131, 58, 180, 0.8);
-    
-    
+    transform: rotateX(54deg) rotateZ(-50deg) translateZ(125px) translateY(58px) translateX(-47px);
+    background:  rgba(131, 58, 180, 0.8);   
 }
 .instagram .effect2 {
-    transform: rotateX(54deg) rotateZ(-50deg) translateZ(100px) translateY(58px) translateX(-47px);
+    transform: rotateX(54deg) rotateZ(-50deg) translateZ(115px) translateY(58px) translateX(-47px);
     background:  rgba(131, 58, 180, 0.6);
-
-  
-
 }
 .instagram .effect3 {
-    transform: rotateX(54deg) rotateZ(-50deg) translateZ(90px) translateY(58px) translateX(-47px);
+    transform: rotateX(54deg) rotateZ(-50deg) translateZ(105px) translateY(58px) translateX(-47px);
     background:  rgba(131, 58, 180, 0.5);
-    
-
 }
 .instagram .effect4 {
-    transform: rotateX(54deg) rotateZ(-50deg) translateZ(80px) translateY(58px) translateX(-47px);
+    transform: rotateX(54deg) rotateZ(-50deg) translateZ(95px) translateY(58px) translateX(-47px);
     background:  rgba(131, 58, 180, 0.4);
- 
 }
 .google .effect1 {
-    transform: rotateX(54deg) rotateZ(-50deg) translateZ(110px) translateY(58px) translateX(-47px);
-    background: rgba(204, 80, 58, 0.8)
-    
-    
+    transform: rotateX(54deg) rotateZ(-50deg) translateZ(135px) translateY(58px) translateX(-37px);
+    background: rgba(204, 80, 58, 0.8); 
 }
 .google .effect2 {
-    transform: rotateX(54deg) rotateZ(-50deg) translateZ(100px) translateY(58px) translateX(-47px);
+    transform: rotateX(54deg) rotateZ(-50deg) translateZ(125px) translateY(58px) translateX(-37px);
     background: rgba(204, 80, 58, 0.6)
-
-  
-
 }
 .google .effect3 {
-    transform: rotateX(54deg) rotateZ(-50deg) translateZ(90px) translateY(58px) translateX(-47px);
+    transform: rotateX(54deg) rotateZ(-50deg) translateZ(115px) translateY(58px) translateX(-37px);
     background: rgba(204, 80, 58, 0.4)
-    
-
 }
 .google .effect4 {
-    transform: rotateX(54deg) rotateZ(-50deg) translateZ(80px) translateY(58px) translateX(-47px);
+    transform: rotateX(54deg) rotateZ(-50deg) translateZ(105px) translateY(58px) translateX(-37px);
     background: rgba(204, 80, 58, 0.3)
- 
 }
 .facebookIcon{
     width: 80px !important;
@@ -382,37 +344,38 @@ body {
 .googleIcon{
     width: 80px !important;
     height: 80px !important;
-    border-radius: 20px;
+    border-radius: 50px;
 }
 .icon img {
     width: 65px;
     height: 65px;
-    transform: rotateX(45deg) rotateZ(-50deg) translateX(10px);
+    transform: rotateX(45deg) rotateZ(-53deg) translateX(19px);
     object-fit: cover;
     border-radius: 12px;
     transition: 1s;
     z-index: 1;
 }
-
+.icon {
+    transition: 0.5s;
+}
 .instagram.bounced {
-    animation: bouncingIcon 1s;
+    transform:  translateY(-50px);  
 }
 .facebook.bounced {
-    animation: bouncingIcon 1s;
+    transform:  translateY(-50px);    
 }
 .google.bounced {
-    animation: bouncingIcon 1s;
+    transform:  translateY(-50px); 
 }
-@keyframes bouncingIcon {
-    from{
-        transform: rotate(45deg) rotateZ(-50deg) translateY(0);
-
-    }
-    to {
-        transform: rotate(45deg) rotateZ(-50deg)  translateY(-50px);
-    }
+.instagram.fall {
+    transform:   translateY(0); 
 }
-
+.facebook.fall {
+    transform:   translateY(0); 
+}
+.google.fall {
+    transform:   translateY(0); 
+}
 
 #close-Menu {
     z-index: 1000;
@@ -503,12 +466,13 @@ body {
 .promo {
     margin-left: 15%;
     color:rgb(31, 53, 177);
+    margin-bottom: 1%;
 }
 
 .new-books {
    display: flex;
    gap: 60px;
-   margin-bottom: 40px;
+   margin-bottom: 80px;
    margin-left: 15%;
    margin-top: 5%;
 
@@ -590,10 +554,6 @@ body {
 .bg.animate {
     display: block;
 }
-
-.cardBack.animate {
-    display: block;
-}
 .new-books .card {
     height: 230px;
     width: 180px;
@@ -609,17 +569,18 @@ body {
 }
 
 .cardBack {
-    display: none;
+    opacity: 0;
     transform: translateZ(-120px) rotateY(180deg);
     background-image: linear-gradient(90deg, tomato , rgb(245, 203, 67));
     position: absolute;
     width: 250px;
-    height: 100%;
+    height: 230px;
     color: white;
     text-align: center;
     box-sizing: border-box;
     padding: 10px;
     line-height: 20px;
+
 }
 .card .cardBack span{
     color: rgb(17, 37, 219);
@@ -629,28 +590,45 @@ body {
 
 }
 .cardBack.animate {
-    display: block;
+    opacity: 1;
+
 }
 
-.category {
+.categories {
     display: flex;
     justify-content: center;
+    margin-top: 2%;
+    
 }
-.category img {
+.category.appear {
+    animation: categoryAnimation 1s;   
+}
+
+@keyframes categoryAnimation {
+    0% {
+        transform: translateX(500px);
+        opacity: 0;
+
+
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+
+    }
+}
+.categories img {
     width: 180px;
     height: 450px;
     object-fit: cover;
     transition: 0.6s;
 }
-.category img:hover {
+.categories img:hover {
     width: 350px;
     transform: translateZ(1000px);
     
 }
-.category.inverse{
-   animation: animateCategory 1s;
-    
-}
+
 @keyframes animateCategory {
     from{
         transform: translateX(100px)
@@ -719,7 +697,11 @@ body {
     width: 200px;
     gap: 30px;
     margin-left: 50px;
+}
 
+.sc-icons {
+    width: 40px !important;
+    height: 40px !important;
 }
 .social-icons img {
     width: 30px;

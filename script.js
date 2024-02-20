@@ -9,11 +9,6 @@ document.addEventListener('scroll', () => {
 
 })
 
-
-
-
-
-
  const menuBtn=document.querySelector('.link-button');
  const closeBtn=document.querySelector('#close-Menu');
  const navMenu1=document.querySelector('#nav-menu-1');
@@ -28,76 +23,99 @@ menuBtn.addEventListener("click", showMenu);
 
 function showMenu() {
     popupWindow.classList.add('active');
-    navMenu1.classList.toggle('active');
-    navMenu2.classList.toggle('active');
-    text1.classList.toggle('active');
-    text2.classList.toggle('active');
-    icons.classList.toggle('active');
-    contactInfo.classList.toggle('active');
+    navMenu1.classList.add('active');
+    navMenu2.classList.add('active');
+    text1.classList.add('active');
+    text2.classList.add('active');
+    icons.classList.add('active');
+    contactInfo.classList.add('active');
 
 }
 closeBtn.addEventListener("click", closeMenu);
 function closeMenu() {
     popupWindow.classList.remove('active');
+    navMenu1.classList.remove('active');
+    navMenu2.classList.remove('active');
+    text1.classList.remove('active');
+    text2.classList.remove('active');
+    icons.classList.remove('active');
+    contactInfo.classList.remove('active');
 }
 
-
-const bouncedInsta=document.querySelectorAll('.insta-icon');
+const bouncings =document.querySelectorAll('.bouncing')
 const google=document.querySelector('.google');
-const bouncedFcb=document.querySelectorAll('.facebook-icon');
 const instagram=document.querySelector('.instagram');
 const facebook=document.querySelector('.facebook');
-const bouncedGgl=document.querySelectorAll('.google-icon');
+const delayIns= 40;
+const delay=30;
+const delayGgl= 20;
 
-instagram.addEventListener('mouseenter', () => {
+instagram.addEventListener('mouseover', () => {
   instagram.classList.add('bounced');
-  bouncedInsta.forEach(bouncedInsta => {
-    bouncedInsta.classList.add("animate")
-
+  instagram.classList.remove('fall');
+  bouncings.forEach((bouncing, index) => {
+    if (bouncing.parentElement === instagram) {
+      setTimeout(()=> {
+        bouncing.classList.add('animate');
+      }, index*delayIns);
+    } 
   })
-
 })
-facebook.addEventListener('mouseenter', () => {
+facebook.addEventListener('mouseover', () => {
   facebook.classList.add('bounced');
-  bouncedFcb.forEach(bouncedFcb => {
-    bouncedFcb.classList.add("animate")
-
+  facebook.classList.remove('fall');
+  bouncings.forEach((bouncing, index) => {
+    if (bouncing.parentElement === facebook) {
+      setTimeout(()=> {
+        bouncing.classList.add('animate');
+      }, index*delay);
+    } 
   })
- 
 })
-google.addEventListener('mouseenter', () => {
+google.addEventListener('mouseover', () => {
   google.classList.add('bounced');
-  bouncedGgl.forEach(bouncedGgl => {
-    bouncedGgl.classList.add("animate")
-
+  google.classList.remove('fall');
+  bouncings.forEach((bouncing, index) => {
+    if (bouncing.parentElement === google) {
+      setTimeout(()=> {
+        bouncing.classList.add('animate');
+      }, index*delayGgl);
+    } 
   })
-
 })
-/*
- icon.forEach(icon => {
-  icon.addEventListener('mouseenter', () => {
-    icon.classList.add('bounced');
-    bouncing.forEach(bouncing => {
-      bouncing.classList.add("animate")
+instagram.addEventListener('mouseleave', () => {
+  instagram.classList.add('fall');
+  instagram.classList.remove('animate');
+  bouncings.forEach((bouncing, index) => {
+    if (bouncing.parentElement === instagram) {
+      setTimeout(()=> {
+        bouncing.classList.remove('animate');
+      }, index*delayIns);
+    } 
   })
-     
+})
+facebook.addEventListener('mouseleave', () => {
+  facebook.classList.add('fall');
+  facebook.classList.remove('animate');
+  bouncings.forEach((bouncing, index) => {
+    if (bouncing.parentElement === facebook) {
+      setTimeout(()=> {
+        bouncing.classList.remove('animate');
+      }, index*delay);
+    } 
   })
-  icon.addEventListener('mouseleave', () => {
-    icon.classList.remove('bounced');
-    bouncing.forEach(bouncing => {
-      bouncing.classList.remove("animate")
-    })
+})
+google.addEventListener('mouseleave', () => {
+  google.classList.add('fall');
+  google.classList.remove('animate');
+  bouncings.forEach((bouncing, index) => {
+    if (bouncing.parentElement === google) {
+      setTimeout(()=> {
+        bouncing.classList.remove('animate');
+      }, index*delayGgl);
+    } 
   })
-  
-
- })
-*/
- 
-
-
-
-
-
+})
 
 const searchInput=document.querySelector('#search-input')
 const searchBtn=document.querySelector('#search-button');
@@ -106,47 +124,76 @@ const arrowRight=document.querySelector('.fa-arrow-right');
 let isActive=false;
 
 searchBtn.addEventListener("click", ()=>{
-  if(!isActive) {
-  searchBtn.classList.add('active');
-  searchBox.classList.add('active');
-  arrowRight.classList.add('active');
-  searchInput.classList.add('active');
+  if (!isActive) {
+    searchBox.style.transform = "rotate(360deg)";
+    setTimeout(() => {
+      searchBtn.classList.add('active');
+      searchBox.classList.add('active');
+      arrowRight.classList.add('active');
+      searchInput.classList.add('active');
+    }, 400);
   }
   else {
-  searchBtn.classList.remove('active');
-  searchBox.classList.remove('active');
-  arrowRight.classList.remove('active');
-  searchInput.classList.remove('active');
+    searchBtn.classList.remove('active');
+    searchBox.classList.remove('active');
+    arrowRight.classList.remove('active');
+    searchInput.classList.remove('active');
+    setTimeout(() => {
+      searchBox.style.transform = "rotate(-360deg)";   
+    }, 400)
   }
   isActive = !isActive;
+})
 
 
+const cards = document.querySelectorAll(".card");
+const cardBacks = document.querySelectorAll(".cardBack");
+const imgBcgs = document.querySelectorAll(".bg");
+
+cards.forEach(card => {
+    card.addEventListener("mouseover", () => {
+        card.classList.add('animate');
+        cards.forEach(otherCard => {
+          if (otherCard !== card) {
+              otherCard.classList.remove('animate');
+          }
+      });
+        cardBacks.forEach(cardBack => {
+            if (cardBack.parentElement === card) {
+                cardBack.classList.add('animate');
+             
+            } else {
+                cardBack.classList.remove('animate');
+            }
+        });
+        imgBcgs.forEach(imgBcg => {
+            if (imgBcg.parentElement.parentElement === card) {
+                imgBcg.classList.add('animate');
+            } else {
+                imgBcg.classList.remove('animate');
+            }
+        });
+    });
+});
+
+
+
+cards.forEach(card => {
+  card.addEventListener("mouseleave", () => {
+    card.classList.remove('animate');
+    setTimeout(() => {
+      cardBacks.forEach(cardBack => {
+        cardBack.classList.remove('animate');
+       })
+    }, 500)
+     imgBcgs.forEach(imgBcg => {
+      imgBcg.classList.remove('animate');
+     })
+  })
 })
 
 
 
-
-
-const card=document.querySelector(".card");
-const cardBack=document.querySelector(".cardBack");
-const imgBcg=document.querySelector(".bg")
-
-card.addEventListener("mouseenter",  showBack);
-function showBack() {
-card.classList.add('animate');
-cardBack.classList.add('animate');
-imgBcg.classList.add('animate');
-
-
-}
-
-card.addEventListener("mouseleave", showFront);
-function showFront() {
-  card.classList.remove('animate');
-  cardBack.classList.remove('animate');
-  imgBcg.classList.remove('animate');
-
-}
 
 
 
@@ -161,14 +208,14 @@ const observer = new IntersectionObserver(function(entries, observer) {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('inverse');
+      observer.unobserve(entry.target);
     } else {
       entry.target.classList.remove('inverse');
     }
   });
 }, options);
- newBooks.forEach(newBooks => {
-  observer.observe(newBooks);
-
+ newBooks.forEach(newBook => {
+  observer.observe(newBook);
  });
  
 
@@ -179,19 +226,19 @@ const options2 = {
   rootMargin: "-20px",
 };
 
-const observer2= new IntersectionObserver(function(entries,observer){
+const leftBookScroll= new IntersectionObserver(function(entries,leftBookScroll){
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('inverse');
     } else {
       entry.target.classList.remove('inverse');
+    
     }
   });
 
-},options);
+},options2);
+leftBookScroll.observe(saleLeftBook);
 
-
-  observer2.observe(saleLeftBook);
   const saleRightBook = document.querySelector(".rightBook");
   const options3 = {
     root: null,
@@ -200,7 +247,7 @@ const observer2= new IntersectionObserver(function(entries,observer){
   };
 
 
-  const observer3= new IntersectionObserver(function(entries,observer){
+  const rightBookScroll= new IntersectionObserver(function(entries,rightBookScroll){
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('inverse');
@@ -209,22 +256,39 @@ const observer2= new IntersectionObserver(function(entries,observer){
       }
     });
   
-  },options);
+  },options3);
   
   
-    observer.observe(saleRightBook);
+    rightBookScroll.observe(saleRightBook);
 
-   const category= document.querySelector('.category');
-   const observer4= new IntersectionObserver(function(entries,observer){
-    entries.forEach(entry=>{
-      if (entry.isIntersecting) {
-        entry.target.classList.add('inverse');
-      } else {
-        entry.target.classList.remove('inverse');
-      }
 
+
+   const categories= document.querySelectorAll('.category');
+   const categoryContainer= document.querySelectorAll('.categories');
+   const delayEachCategory=200;
+   const categoryOptions = {
+    root: null,
+    threshold: 0,
+    rootMargin: "-20px",
+   };
+
+   const categoryonScroll= new IntersectionObserver(function(entries,categoryonScroll){
+    entries.forEach((entry,index)=>{
+        if (!entry.isIntersecting) {
+         return
+        }
+        else {
+          setTimeout(() => {
+            entry.target.classList.add('appear');
+        }, index * delayEachCategory);
+       
+
+        }
     })
+   },categoryOptions);
 
-   },options);
+   categories.forEach(category => {
+    categoryonScroll.observe(category);
+   });
+  
 
-   observer4.observe(category);
